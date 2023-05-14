@@ -1,0 +1,119 @@
+*
+{
+margin: 0px;
+padding: 0px;
+text-decoration: none;
+list-style: none;
+}
+
+nav
+{
+width: 100%;
+height: 60px;
+margin: 0px;
+padding: 0px;
+background-image: linear-gradient(90deg,DeepSkyBlue,RoyalBlue,#15317E);
+}
+
+.menubutton
+{
+width: 60px;
+height: 60px;
+color: black;
+background-color: gold;
+border-right: 3px solid navy;
+border-radius: 0px;
+}
+
+.menu-icon
+{
+width: 30px;
+height: 30px;
+color: crimson;
+}
+
+.dropdown
+{
+margin: 0px;
+padding: 0px;
+position: absolute;
+display: inline;
+}
+
+.dropdown-content
+{
+min-width: 160px;
+background-color: white;
+position: absolute;
+display: none;
+z-index: 1;
+}
+
+.dropdown-content a
+{
+padding: 14px 14px;
+color: crimson;
+background-color: azure;
+text-decoration: none;
+display: block;
+font-size: 20px;
+font-weight: 900;
+box-shadow: inset 0 0 0 0 indigo;
+}
+
+.dropdown-content a:hover
+{
+background-color: indigo;
+color: yellow;
+box-shadow: inset 300px 0 0 0 indigo;
+transition: ease-out 0.3s;
+}
+
+.dropdown:hover .dropdown-content
+{
+display: block;
+}
+
+label.logo
+{
+margin: 0px;
+padding: 0px 0px 0px 420px;
+color: lightyellow;
+line-height: 60px;
+font-size: 30px;
+font-weight: bold;
+}
+
+nav ul
+{
+float: right;
+margin-right: 10px;
+}
+
+nav ul li
+{
+margin: 0px 10px;
+display: inline-block;
+line-height: 60px;
+}
+
+nav ul li a
+{
+padding: 7px 20px;
+color: black;
+background-color: #CCFFFF;
+font-size: 20px;
+font-weight: 900;
+border-style: solid;
+border-color: #43C6DB;
+border-radius: 10px/50%;
+box-shadow: inset 0 0 0 0 #43C6DB;
+}
+
+nav ul li a:hover
+{
+background-color: navy;
+color: white;
+box-shadow: inset 300px 0 0 0 #43C6DB;
+transition: ease-out 0.5s;
+}

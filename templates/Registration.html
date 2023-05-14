@@ -1,0 +1,449 @@
+<!doctype html>
+<html>
+<head>
+
+<title>
+Registration Form
+</title>
+
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css')}}">
+
+<style type="text/css">
+body
+{
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('{{url_for('static',filename='back1.jpg')}}');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-position: center;
+}
+
+.form_heading
+{
+background-image: linear-gradient(90deg,#ADDFFF,#357EC7,#0041C2,#0000A5);
+border-radius: 10px 10px 0px 0px;
+padding: 0px;
+}
+
+.form_heading *
+{
+vertical-align: middle;
+}
+
+.form_border
+{
+display: inline;
+margin: 0px;
+padding: 0px;
+text-align: left;
+border-style: dashed solid;
+border-width: 3px 2px;
+border-radius: 12px;
+border-color: navy;
+box-shadow: -2px 2px 10px 2px navy;
+background-image: linear-gradient(180deg,#DBE9FA,aliceblue,#F0FFFF);
+}
+
+.field_heading
+{
+display: inline-block;
+margin-left: 6px;
+width : 170px;
+color: #0020C2;
+text-align: center;
+text-shadow: 2px 2px skyblue;
+font-size: 22px;
+font-family: fantasy;
+}
+
+.field
+{
+margin: 8px 8px;
+padding: 8px 8px;
+width: 535px;
+color: navy;
+background-color: #ADDFFF;
+border-style: solid;
+border-width: 2px 6px 2px 6px;
+border-radius: 15px;
+border-color: navy;
+box-sizing: border-box;
+font-weight: 900;
+font-size: 18px;
+}
+
+.field::placeholder
+{
+color: navy;
+font-weight: bold;
+}
+
+input:focus
+{
+color: ghostwhite;
+background-color: #357EC7;
+}
+
+input:focus::placeholder
+{
+color: transparent;
+}
+
+#gender_heading
+{
+display: inline-block;
+margin: 0px 8px 0px 0px;
+width: 180px;
+color: #0020C2;
+text-align: center;
+text-shadow: 2px 2px skyblue;
+font-size: 22px;
+font-family: fantasy;
+}
+
+.gender_type
+{
+margin: 0px 40px 0px 2px;
+padding: 5px;
+width: 66px;
+text-align: center;
+color: navy;
+background-color: #ADDFFF;
+border-style: solid;
+border-width: 2px 6px 2px 6px;
+border-radius: 15px;
+border-color: navy;
+box-sizing: border-box;
+font-weight: bold;
+font-size: 20px;
+}
+
+.select_choice
+{
+width: 22%;
+margin: 8px 10px;
+padding: 4px 4px;
+color: navy;
+background-color: aquamarine;
+border-style: solid;
+border-width: 4px 4px;
+border-radius: 15px;
+border-color: navy;
+font-weight: bold;
+font-size: 18px;
+}
+
+.select_choice::placeholder
+{
+color: navy;
+font-weight: bold;
+}
+
+.select_choice:focus
+{
+background-color: yellow;
+}
+
+.address *
+{
+vertical-align: middle;
+}
+
+#address_heading
+{
+display: inline-block;
+width : 185px;
+color: #0020C2;
+text-align: center;
+text-shadow: 2px 2px skyblue;
+font-size: 22px;
+font-family: fantasy;
+}
+
+#address_field
+{
+color: navy;
+background-color: #ADDFFF;
+border-style: solid;
+border-width: 2px 6px 2px 6px;
+border-radius: 15px;
+border-color: navy;
+box-sizing: border-box;
+font-size: 18px;
+font-weight: 900;
+}
+
+#address_field::placeholder
+{
+color: navy;
+font-weight: bold;
+}
+
+#address_field:focus
+{
+color: ghostwhite;
+background-color: #357EC7;
+}
+
+#address_field:focus::placeholder
+{
+color: transparent;
+}
+
+#submit_button
+{
+margin-left: 20px;
+width: 200px;
+height: 55px;
+color: ghostwhite;
+background-image: linear-gradient(90deg,RoyalBlue,#15317E);
+letter-spacing: 3px;
+text-transform: uppercase;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 0 0 0 0 aliceblue;
+transition: ease-out 0.5s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#submit_button:hover
+{
+cursor: pointer;
+color: MediumBlue;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset -300px 0 0 0 aliceblue;
+}
+
+#reset_button
+{
+margin-right: 20px;
+width: 200px;
+height: 55px;
+color: ghostwhite;
+background-image: linear-gradient(-90deg,RoyalBlue,#15317E);
+letter-spacing: 3px;
+text-transform: uppercase;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 0 0 0 0 aliceblue;
+transition: ease-out 0.5s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#reset_button:hover
+{
+cursor: pointer;
+color: MediumBlue;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 300px 0 0 0 aliceblue;
+}
+
+h2
+{
+display: inline;
+letter-spacing: 2px;
+color: blue;
+text-shadow: 2px 2px cyan;
+font-weight: 900;
+font-size: 20px;
+font-family: arial;
+}
+
+#login
+{
+color: navy;
+text-shadow: 2px 2px 10px aliceblue;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+.logo
+{
+padding: 5px 15px;
+width: 400px;
+height: 50px;
+background-color: #E0FFFF;
+}
+
+img
+{
+height: 575px;
+object-fit: fill;
+}
+</style>
+
+</head>
+
+<body>
+<nav>
+<div class="navbar">
+	<img src="{{url_for('static',filename='logo.png')}}" class="logo">
+<ul>
+<li><label class="tab"><a href="/">HOME</a></li></label>
+<li><label class="tab"><a href="/about">ABOUT</a></li></label>
+<li><label class="tab"><a href="/login">LOGIN</a></li></label>
+<li><label class="tab"><a style="border: 3px solid #FFF8DC; border-width: 2px 6px 2px 6px; background-color: #43C6DB; color: white;" href="/register">REGISTER</a></li></label>
+</ul>
+</div>
+</nav>
+
+<center>
+	{% with message=get_flashed_messages() %}
+	{% if message %}
+	{% for msg in message %}
+	<div class="error"><p>{{ msg }}</p></div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+</center>
+
+<br>
+<br>
+
+<div align="center">
+<form action="/rsubmit" method="post" name="rform" onsubmit="return form_validation();" enctype="multipart/form-data">
+<fieldset class="form_border">
+<div class="form_heading">
+<img style="padding: 0px 90px 0px 0px; width: 120px; height: 100px;" src="{{url_for('static',filename='registration_icon.png')}}">
+<label style="width: 400px; color: white;  text-align: center; font-size: 40px; font-variant: small-caps; font-family: Arial;"><b>Registration Form</b></label>
+</div>
+
+<br>
+<br>
+<label class="field_heading">Full Name</label>
+	<input type="text" class="field" name="fname" placeholder="Enter your Full Name!">
+<br>
+<br>
+<label class="field_heading">Username</label>
+	<input type="text" class="field" name="uname" placeholder="Enter your Username!">
+<br>
+<br>
+<label class="field_heading">Password</label>
+	<input type="text" class="field" name="upassword" placeholder="Enter your Password!" onkeydown="keyDown(this)" onkeypress="keyPress(this)" onkeyup="keyUp(this)">
+<br>
+<br>
+<label class="field_heading">Confirm Password</label>
+	<input type="text" class="field" name="cupassword" placeholder="Re-enter Password!" onkeydown="keyDown(this)" onkeypress="keyPress(this)" onkeyup="keyUp(this)">
+<script type="text/javascript">
+function keyDown(n)
+{
+n.style.webkitTextSecurity="none";
+}
+function keyPress(n)
+{
+n.style.webkitTextSecurity="none";
+}
+function keyUp(n)
+{
+n.style.webkitTextSecurity="disc";
+}
+</script>
+<br>
+<br>
+<label class="field_heading">E-mail ID</label>
+	<input type="text" class="field" name="uemail" placeholder="Enter your Email-Id!">
+<br>
+<br>
+<label class="field_heading">Phone Number</label>
+	<input type="text" class="field" name="uphone" placeholder="Enter your Phone Number!">
+<br>
+<br>
+<br>
+<label id="gender_heading">Gender</label>
+	<input type="radio" name="gender" value="Male" id="male">
+	<label class="gender_type" for="male" onmousedown="mouseDown(this)" onmouseup="mouseUp(this)">Male</label>
+
+	<input type="radio" name="gender" value="Female" id="female">
+	<label class="gender_type" for="female" onmousedown="mouseDown(this)" onmouseup="mouseUp(this)">Female</label>
+
+	<input type="radio" name="gender" value="Other" id="other">
+	<label class="gender_type" for="other" onmousedown="mouseDown(this)" onmouseup="mouseUp(this)">Other</label>
+<script type="text/javascript">
+function mouseDown(g)
+{
+g.style.backgroundColor="#357EC7";
+g.style.color="ghostwhite";
+}
+function mouseUp(g) 
+{
+g.style.backgroundColor="#ADDFFF";
+g.style.color="navy";
+}
+</script>
+<br>
+<br>
+<br>
+<p class="address">
+<label id="address_heading">Address</label>
+	<textarea  id="address_field" name="address" cols="51"  rows="4" placeholder=" Enter your Address!"></textarea>
+
+</p>
+<br>
+<br>
+<label class="field_heading">Profile Photo</label>
+        <input type="file" class="field" name="profileImage" id="uploadfile" accept="image/*">
+<br>
+<br>
+<br>
+<br>
+<div class="container" align="center">
+	<input id="submit_button" type="submit" name="submit" value="Submit">
+	<button type="button" id="reset_button" name="reset" onclick="rform_reset();">Reset</button>
+<script type="text/javascript">
+document.rform.name.focus();
+function rform_reset()
+{
+document.rform.fname.value="";
+document.rform.uname.value="";
+document.rform.upassword.value="";
+document.rform.cupassword.value="";
+document.rform.uemail.value="";
+document.rform.uphone.value="";
+document.rform.gender[0].checked=false;
+document.rform.gender[1].checked=false;
+document.rform.gender[2].checked=false;
+document.rform.address.value="";
+document.rform.fname.focus();
+}
+</script>
+<br>
+<br>
+<br>
+<h2 id="text" onmousedown="mouse_Down();" onmouseup="mouse_Up();">Already Registered? - </h2><a id="login" href="/login">Login</a>
+<script type="text/javascript">
+function mouse_Down()
+{
+document.getElementById("text").style.color="red";
+}
+function mouse_Up() 
+{
+document.getElementById("text").style.color="purple";
+}
+</script>
+<br>
+<br>
+<br>
+</div>
+</fieldset>
+</form>
+</div>
+
+<br>
+<br>
+</body>
+</html>

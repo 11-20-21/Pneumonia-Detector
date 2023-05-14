@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+
+<title>
+Login Form
+</title>
+
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css')}}">
+
+<style type="text/css">
+body
+{
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('{{url_for('static',filename='back1.jpg')}}');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-position: center;
+}
+
+.form_heading
+{
+background-image: linear-gradient(-90deg,#ADDFFF,#357EC7,#0041C2,#0000A5);
+border-radius: 10px 10px 0px 0px;
+padding: 0px;
+}
+
+.form_heading *
+{
+vertical-align: middle;
+}
+
+.form_border
+{
+display: inline;
+margin: 0px;
+padding: 0px;
+background-image: linear-gradient(180deg,#DBE9FA,aliceblue,#F0FFFF);
+text-align: left;
+border-style: dashed solid;
+border-width: 3px 2px;
+border-radius: 12px;
+border-color: navy;
+box-shadow: -2px 2px 10px 2px navy;
+}
+
+.field_heading
+{
+display: inline;
+margin-left: 32px;
+}
+
+.field
+{
+padding: 2px 8px;
+width: 70%;
+vertical-align: middle;
+background-color: #ADDFFF;
+border-style: solid;
+border-left: none;
+border-width: 3px 5px;
+border-radius: 0px 15px 15px 0px;
+border-color: navy;
+box-sizing: border-box;
+font-weight: 900;
+font-size: 16px;
+}
+
+.field-icon 
+{
+margin-right: 0px;
+padding: 5px;
+width: 30px;
+height: 30px;
+color: navy;
+background-color:  #ADDFFF;
+border: 3px solid navy;
+vertical-align: middle;
+border-radius: 30px;
+}
+
+
+.field::placeholder
+{
+color: darkslategray;
+font-weight: bold;
+}
+
+input:focus
+{
+color: ghostwhite;
+background-color: #357EC7;
+border-style: solid;
+border-left: none;
+border-width: 3px 5px;
+border-radius: 0px 15px 15px 0px;
+border-color: Gainsboro;
+}
+
+input:focus::placeholder
+{
+color: transparent;
+}
+
+#submit_button
+{
+margin-left: 20px;
+width: 150px;
+height: 40px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: ghostwhite;
+background-image: linear-gradient(-90deg,RoyalBlue,#15317E);
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 0 0 0 0 aliceblue;
+transition: ease-out 0.5s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#submit_button:hover
+{
+cursor: pointer;
+color: MediumBlue;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset -300px 0 0 0 aliceblue;
+}
+
+#reset_button
+{
+margin-right: 20px;
+width: 150px;
+height: 40px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: ghostwhite;
+background-image: linear-gradient(90deg,RoyalBlue,#15317E);
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 0 0 0 0 aliceblue;
+transition: ease-out 0.5s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#reset_button:hover
+{
+cursor: pointer;
+color: MediumBlue;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 300px 0 0 0 aliceblue;
+}
+
+
+h2
+{
+display: inline;
+letter-spacing: 2px;
+color: blue;
+text-shadow: 2px 2px cyan;
+font-weight: 800;
+font-size: 16px;
+font-family: arial;
+}
+
+#forget_password
+{
+display: block;
+margin-top: 20px;
+letter-spacing: 2px;
+text-align: center;
+color: navy;
+text-decoration: underline;
+font-size: 14px;
+font-family: fantasy;
+border: none;
+}
+
+#register
+{
+color: navy;
+text-shadow: 2px 2px 10px aliceblue;
+font-weight: 900;
+font-size: 20px;
+font-family: arial;
+}
+
+.logo
+{
+padding: 5px 15px;
+width: 400px;
+height: 50px;
+background-color: #E0FFFF;
+}
+
+img
+{
+height: 575px;
+object-fit: fill;
+}
+
+.error {
+	width: 30%;
+	padding: 8px;
+	color: navy;
+	background-color: #E55451;
+	border: 3px solid navy;
+	border-top: none;
+	font-size: 20px;
+	font-weight: 800;
+  }
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="navbar">
+	<img src="{{url_for('static',filename='logo.png')}}" class="logo">
+<ul>
+<li><label class="tab"><a href="/">HOME</a></li></label>
+<li><label class="tab"><a href="/about">ABOUT</a></li></label>
+<li><label class="tab"><a style="border: 3px solid #FFF8DC; border-width: 2px 6px 2px 6px; background-color: #43C6DB; color: white;" href="/login">LOGIN</a></li></label>
+<li><label class="tab"><a href="/register">REGISTER</a></li></label>
+</ul>
+</div>
+</nav>
+
+<center>
+	{% with message=get_flashed_messages() %}
+	{% if message %}
+	{% for msg in message %}
+	<div class="error"><p>{{ msg }}</p></div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+</center>
+
+<br>
+<br>
+<br>
+
+<div align="center">
+<form action="/lsubmit" method="post" name="login" autocomplete="on" onsubmit="return form_validation();" novalidate>
+
+<fieldset class="form_border">	
+<div class="form_heading">
+<img style="border-radius: 10px 0 0 0; margin: 0px 60px 0px 0px; padding: 0px; width: 100px; height: 100px; background-color: #ADDFFF;" src="{{url_for('static',filename='login_icon.png')}}">
+<label style="width: 400px; color: white;  text-align: center; font-size: 40px; font-variant: small-caps; font-family: Arial;"><b>LOGIN</b></label>
+</div>
+<br>
+<br>
+<label class="field_heading"><ion-icon class="field-icon" name="person-circle"></ion-icon>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script><input type="text" class="field" name="uname" placeholder="Enter Username!"></label>
+<br>
+<br>
+<label class="field_heading"><ion-icon class="field-icon" name="lock-closed"></ion-icon>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script><input type="password" class="field" name="upassword" placeholder="Enter Password!"></label>
+	
+<a id="forget_password" href="Password-Recovery.html">forget password?</a>
+<br>
+<br>
+<div class="container" align="center">
+	<input id="submit_button" type="submit" name="submit" value="Login">
+	<input id="reset_button" type="reset" name="reset" onclick="login_reset();" value="Reset">
+<script type="text/javascript">
+function login_reset()
+{
+document.login.uname.value="";
+document.login.upassword.value="";
+document.login.uname.focus();
+}
+</script>
+<br>
+<br>
+<br>
+<h2>Not a Member? - </h2><a id="register" href="/register">Register</a>
+<br>
+<br>
+<br>
+</div>
+</fieldset>
+</form>
+</div>
+
+<br>
+<br>
+</body>
+</html>

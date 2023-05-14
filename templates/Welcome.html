@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<title>
+Home
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css') }}">
+
+<style type="text/css">
+
+body
+{
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('{{url_for('static',filename='3.jpg') }}');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-position: center;
+}
+
+.myslides
+{
+border-style: solid none;
+border-width: 5px;
+border-color: blue; 
+}
+
+.logo
+{
+background-color: #E0FFFF;
+width: 400px;
+height: 50px;
+padding: 5px 15px;
+}
+
+img
+{
+height: 575px;
+object-fit: fill;
+}
+
+.welcome {
+  width: 30%;
+  padding: 8px;
+  color: navy;
+  background-color: #4CC417;
+  border: 3px solid navy;
+  border-top: none;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+<div class="navbar">
+<img src="{{url_for('static',filename='logo.png')}}" class="logo">
+<ul>
+  <li><label class="tab"><a style="border: 3px solid #FFF8DC; border-width: 2px 6px 2px 6px; background-color: #43C6DB; color: white;" href="/welcome">HOME</a></li></label>
+  <li><label class="tab"><a href="/about_welcome">ABOUT</a></li></label>
+  <li><label class="tab"><a href="/history">HISTORY</a></li></label>
+  <li><label class="tab"><a href="/pdetection">DETECT</a></li></label>
+  <li><label class="tab"><a href="/logout">LOGOUT</a></li></label>
+</ul>
+</div>
+</nav>
+
+<center>
+{% with message=get_flashed_messages() %}
+{% if message %}
+{% for msg in message %}
+<div class="welcome"><p>{{ msg }}</p></div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+</center>
+
+<br>
+<br>
+<div class="w3-content w3-section myslides">
+  <img class="mySlides" src="{{url_for('static',filename='d1.jpg')}}" style="width:100%">
+  <img class="mySlides" src="{{url_for('static',filename='l1.jpg')}}" style="width:100%">
+  <img class="mySlides" src="{{url_for('static',filename='l2.jpg')}}" style="width:100%">
+  <img class="mySlides" src="{{url_for('static',filename='l3.jpg')}}" style="width:100%">
+  <img class="mySlides" src="{{url_for('static',filename='digital-xray.jpg')}}" style="width:100%">
+  <img class="mySlides" src="{{url_for('static',filename='radiology.jpg')}}" style="width:100%">
+  <img class="mySlides" src="{{url_for('static',filename='medical.jpg')}}" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

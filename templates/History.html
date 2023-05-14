@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Name</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css')}}">
+
+	<style type="text/css">
+		.logo
+		{
+		background-color: #E0FFFF;
+		width: 400px;
+		height: 50px;
+		padding: 5px 15px;
+		}
+
+		img
+		{
+		height: 575px;
+		object-fit: fill;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="navbar">
+			<img src="{{url_for('static',filename='logo.png')}}" class="logo">
+		<ul>
+		<li><label class="tab"><a href="/welcome">HOME</a></li></label>
+		<li><label class="tab"><a href="/about_welcome">ABOUT</a></li></label>
+		<li><label class="tab"><a style="border: 3px solid #FFF8DC; border-width: 2px 6px 2px 6px; background-color: #43C6DB; color: white;" href="/history">HISTORY</a></li></label>
+		<li><label class="tab"><a href="/pdetection">DETECT</a></li></label>
+		<li><label class="tab"><a href="/logout">LOGOUT</a></li></label>
+		</ul>
+		</div>
+		</nav>
+	<br>
+	<br>
+	<center>
+		<h1>Future Scope</h1>
+	</center>
+</body>
+</html>

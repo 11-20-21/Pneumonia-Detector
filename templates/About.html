@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Life Care About </title>
+        <link rel="stylesheet" href="Interface.css">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body
+{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url('{{url_for('static',filename='3.jpg') }}');
+    background-size:cover;
+    background-repeat: no-repeat;
+  font-family: Verdana, sans-serif;
+}
+h2
+{
+   color:#E0FFFF;
+   display:inline-block;
+   Padding:15px;
+   background-color:#1E90FF;
+   border:1px;
+}
+
+
+.icon-bar {
+  position: fixed;
+  top: 40%;
+  -webkit-transform: translateX(2870%);
+  -ms-transform: translateX(2870%);
+  transform: translateX(2870%);
+  float:right;
+}
+.icon-bar a {
+  display: block;
+  text-align:center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.instagram {
+  background: #125688;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+.logo
+{
+background-color: #E0FFFF;
+width: 400px;
+height: 50px;
+padding: 5px 15px;
+}
+
+</style>
+         
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+    <img src="{{url_for('static',filename='logo.png')}}" class="logo">
+    <ul>
+    <li><label class="tab"><a href="/">HOME</a></li></label>
+    <li><label class="tab"><a style="border: 3px solid #FFF8DC; border-width: 2px 6px 2px 6px; background-color: #43C6DB; color: white;" href="/about">ABOUT</a></li></label>
+    <li><label class="tab"><a href="/login">LOGIN</a></li></label>
+    <li><label class="tab"><a href="/register">REGISTER</a></li></label>
+    </ul>
+    </div>
+    </nav>
+<br>
+<br>
+<center>
+<div class="header"> 
+
+  <a href="index.html"><img  src="{{url_for('static',filename='Logo.png')}}" width="590px" height="120 px"></a><h1 style="margin-center: 950px;
+    font-family: 'Fjalla One', sans-serif;
+    color:blue;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Leading Light in Healthcare</h1>
+</div>
+</center>
+<br>
+<br>
+&nbsp;&nbsp;<h2>Know about Us</h2>
+<br>
+<br>
+<p><h3 >&nbsp; Life Care Diagnostics is a leading pathology laboratory dedicated to providing accurate and timely diagnostic services to patients and healthcare providers. Our lab is equipped with state-of-the-art technology and staffed with highly skilled professionals who are committed to delivering the highest level of patient care.
+
+At Life Care Diagnostics, we understand the critical role that laboratory testing plays in the diagnosis and treatment of diseases. Our team of experienced pathologists, laboratory technicians, and support staff work together to ensure that every test is performed with precision and accuracy, and that results are delivered promptly to healthcare providers.
+
+We offer a comprehensive range of diagnostic services, including clinical chemistry, hematology, microbiology, serology, and molecular diagnostics. We also provide specialized testing in areas such as genetics, oncology, and infectious diseases. Our lab is equipped with the latest technology and automated systems, which allows us to provide our services efficiently and with minimal error.
+
+We take pride in our commitment to quality and patient care. We follow strict quality control procedures and participate in external quality assurance programs to ensure that our results are accurate and reliable. Our team is dedicated to providing personalized service and support to each patient and healthcare provider, and we strive to exceed expectations at every step of the testing process.
+
+At Life Care Diagnostics, we are committed to advancing the field of pathology through ongoing education, research, and innovation. We are proud to be at the forefront of diagnostic testing and to contribute to the health and well-being of our patients and communities.
+</h3></p>
+<br>
+<br>
+&nbsp;&nbsp;<h2>Contact Us</h2>
+<br>
+<br>
+<center>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30154.53287240238!2d72.78929951083983!3d19.137613500000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6205d848411%3A0x15f7403a46f8b8b4!2sLifecare%20Diagnostics!5e0!3m2!1sen!2sin!4v1683150570874!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</center>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<p><h3>&nbsp;Life Care Diagnostics,
+<br>
+&nbsp;1st Floor, Sunshine, Opp, Sastri Nagar Rd, Lokhandwala Complex, Andheri West, Mumbai, Maharashtra 400053
+<br>
+&nbsp;Contact Number: +022 2525&nbsp;5588, +022 2525&nbsp;5589
+</p>
+
+<a href="/about"><img src="{{url_for('static',filename='stt.png')}}" width="100px" height="100 px" align= right></a>
+
+
+<div class="icon-bar">
+  <a href="https://www.facebook.com/Lifecarediagnosticcentre" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="https://twitter.com/LifecareDiagnos" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="https://www.instagram.com/lifecare_diagnostics/" class="instagram"><i class="fa fa-instagram"></i></a> 
+  <a href="https://www.youtube.com/channel/UCuh7QzQN22gF0-Gk44em1Pg" class="youtube"><i class="fa fa-youtube"></i></a> 
+</div>
+
+</body>
+<footer><center>&nbsp;<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&reg; Life Care Diagnostics</h3></center></footer>
+</html>

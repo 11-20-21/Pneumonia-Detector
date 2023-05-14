@@ -1,0 +1,10 @@
+{
+    "params":
+    {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/lifecare",
+        "prod_uri": "mysql://root:@localhost/lifecare",
+        "gmail-user": "lifecarediagnostics10@gmail.com",
+        "gmail-password": "cmztubwbivbemazr"
+    }
+}

@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+<head>
+<title>
+Pneumonia Detection Form
+</title>
+
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mystyle.css')}}">
+
+<style type="text/css">
+
+body
+{
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('{{url_for('static',filename='back1.jpg')}}');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-position: center;
+width: 100%;
+}
+
+.form_heading
+{
+padding: 25px;
+text-align: center;
+letter-spacing: 5px;
+background-image: linear-gradient(-90deg,#52595D,silver,#52595D);
+}
+
+.form_heading *
+{
+vertical-align: middle;
+}
+
+.border
+{
+width: 740px;
+display: flex;
+border-style: dotted solid;
+border-bottom: none;
+border-width: 5px 2px;
+border-color: black;
+background-image: linear-gradient(-90deg,#52595D,silver,#52595D);
+text-align: left;
+}
+
+.form_border
+{
+padding: 0px;
+margin: 0px;
+display: inline;
+border-style: dotted solid;
+border-top: none;
+border-width: 5px 2px;
+border-color: black;
+background-image: linear-gradient(180deg,Gainsboro,silver);
+text-align: left;
+}
+
+.field_heading
+{
+width : 190px;
+display: inline-block;
+color: darkslategray;
+text-shadow: 3px 3px Gainsboro;
+font-size: 24px;
+font-family: fantasy;
+margin-left: 6px;
+text-align: center;
+}
+
+.field
+{
+width: 500px;
+padding: 8px 8px;
+margin: 8px 20px;
+border-style: solid;
+border-width: 2px 6px;
+border-radius: 20px;
+border-color: darkslategray;
+box-sizing: border-box;
+color: #0C090A;
+background-color: Gainsboro;
+font-weight: 900;
+font-size: 18px;
+}
+
+.field::placeholder
+{
+color: #0C090A;
+font-weight: bold;
+}
+
+input:focus
+{
+color: white;
+background-color: #52595D;
+border-style: solid;
+border-width: 4px 6px;
+border-radius: 20px;
+border-color: Gainsboro;
+}
+
+input:focus::placeholder
+{
+color: transparent;
+}
+
+.select_choice
+{
+width: 500px;
+padding: 8px 8px;
+margin: 8px 20px;
+border-style: solid;
+border-width: 2px 6px;
+border-radius: 20px;
+border-color: darkslategray;
+box-sizing: border-box;
+color: #0C090A;
+background-color: Gainsboro;
+font-weight: bold;
+font-size: 18px;
+}
+
+.select_choice::placeholder
+{
+color: #0C090A;
+font-weight: bold;
+}
+
+.select_choice:focus
+{
+color: white;
+background-color: #52595D;
+border-style: solid;
+border-width: 4px 6px;
+border-radius: 20px;
+border-color: Gainsboro;
+}
+
+#gender_heading
+{
+width : 190px;
+display: inline-block;
+margin-left: 6px;
+margin-right: 22px;
+text-align: center;
+color: darkslategray;
+text-shadow: 3px 3px Gainsboro;
+font-size: 24px;
+font-family: fantasy;
+}
+
+.gender_type
+{
+width: 90px;
+margin: 0px 25px 0px 0px;
+text-align: left;
+color: #0C090A;
+font-weight: bold;
+font-size: 20px;
+}
+
+
+#reset_button
+{
+margin-left: 20px;
+width: 170px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: ghostwhite;
+background-image: linear-gradient(-90deg,darkslategray,silver);
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 0 0 0 0 ghostwhite;
+transition: ease-out 0.5s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#reset_button:hover
+{
+cursor: pointer;
+color: black;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset -300px 0 0 0 ghostwhite;
+}
+
+#submit_button
+{
+width: 200px;
+height: 50px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: ghostwhite;
+background-color: darkslategray;
+border-style: dashed;
+border-width: 3px;
+border-radius: 10px;
+border-color: navy;
+box-shadow: inset 0 0 0 0 silver;
+transition: ease-out 0.3s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#submit_button:hover
+{
+cursor: pointer;
+border-width: 4px;
+border-radius: 10px;
+color: darkslategray;
+border-color: darkslategray;
+box-shadow: inset 0 -300px 0 0 silver;
+}
+
+#cancel_button
+{
+width: 170px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: ghostwhite;
+background-image: linear-gradient(90deg,darkslategray,silver);
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 0 0 0 0 ghostwhite;
+transition: ease-out 0.5s;
+font-weight: 900;
+font-size: 22px;
+font-family: arial;
+}
+
+#cancel_button:hover
+{
+cursor: pointer;
+color: black;
+border-style: solid;
+border-width: 3px 5px;
+border-radius: 25px/30%;
+border-color: black;
+box-shadow: inset 300px 0 0 0 ghostwhite;
+}
+
+
+.icon
+{
+width: 200px;
+height: 200px;
+position: relative;
+padding: 30px;
+margin: 0px; 
+border-style: dashed solid; 
+border-width: 10px 5px;
+border-radius: 50%;
+border-color: slategray silver;
+box-shadow: 0px 25px 25px 10px black;
+background-color: ghostwhite;
+
+}
+
+.logo
+{
+background-color: #E0FFFF;
+width: 400px;
+height: 50px;
+padding: 5px 15px;
+}
+
+img
+{
+height: 575px;
+object-fit: fill;
+}
+
+.success {
+	width: 30%;
+	padding: 8px;
+	color: navy;
+	background-color: #4CC417;
+	border: 3px solid navy;
+	border-top: none;
+	font-size: 20px;
+	font-weight: 800;
+  }
+</style>
+
+<script type="text/javascript">
+function form_validation()
+{
+var valid=true;
+var name=document.eform.uname.value;
+var source=document.eform.source.value;
+var destination=document.eform.destination.value;
+var seat=document.eform.seat.value;
+var category=document.eform.category.value;
+var vaccine_status=document.eform.vaccine.value;
+var email_id=document.eform.uemail.value;
+var a_position=email_id.indexOf("@");
+var dot_position=email_id.lastIndexOf(".");
+var male=document.eform.gender[0].checked;
+var female=document.eform.gender[1].checked;
+var other=document.eform.gender[2].checked;
+if (name=="")
+{
+alert("Please enter your Name!");
+valid=false;
+}
+if (source=="")
+{
+alert("Please enter Source station!");
+valid=false;
+}
+if (destination=="")
+{
+alert("Please enter Destination station!");
+valid=false;
+}
+if (seat=="Seat")
+{
+alert("Please select Seat type!");
+valid=false;
+}
+if (category=="Category")
+{
+alert("Please select your Category!");
+valid=false;
+}
+if (vaccine_status=="Vaccine")
+{
+alert("Please select your Vaccination Status!");
+valid=false;
+}
+if (email_id=="")
+{
+alert("Please enter your Email-Id!");
+email_success=0;
+valid=false;
+}
+else if ((a_position==-1) || (dot_position==-1))
+{
+alert("Please enter a valid Email-Id!");
+email_success=0;
+valid=false;
+}
+else if ((a_position < 1) || ((dot_position-a_position)<2))
+{
+alert("Please enter a valid Email-Id!");
+email_success=0;
+valid=false;
+}
+if (male==false && female==false && other==false)
+{
+alert("Please choose your Gender! ( Male or Female or Other )");
+gender_success=0;
+valid=false;
+}
+return valid;
+}
+</script>
+
+</head>
+<body>
+
+<nav>
+<div class="navbar">
+	<img src="{{url_for('static',filename='logo.png')}}" class="logo">
+<ul>
+<li><label class="tab"><a href="/welcome">HOME</a></li></label>
+<li><label class="tab"><a href="/about_welcome">ABOUT</a></li></label>
+<li><label class="tab"><a href="/history">HISTORY</a></li></label>
+<li><label class="tab"><a style="border: 3px solid #FFF8DC; border-width: 2px 6px 2px 6px; background-color: #43C6DB; color: white;" href="/pdetection">DETECT</a></li></label>
+<li><label class="tab"><a href="/logout">LOGOUT</a></li></label>
+</ul>
+</div>
+</nav>
+
+<center>
+	{% with message=get_flashed_messages() %}
+	{% if message %}
+	{% for msg in message %}
+	<div class="success"><p>{{ msg }}</p></div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+</center>
+
+<br>
+<br>
+<div align="center">
+<form action="/pdsubmit" method="POST" name="eform" autocomplete="on" onsubmit="return form_validation();" enctype="multipart/form-data" novalidate>
+<fieldset class="border">
+<legend align="middle"><img class="icon" src="{{url_for('static',filename='pneumonia_icon.png')}}"></legend>
+</fieldset>
+<fieldset class="form_border">
+<div class="form_heading">
+<label style="width: 500px; color: white; font-size: 50px; font-variant: small-caps; font-family: Arial;"><b>Pneumonia Detection</b></label>
+</div>
+<br>
+<br>
+<label class="field_heading">Name</label>
+	<input type="text" class="field" name="name" placeholder="Enter Patient's Name!">
+<br>
+<br>
+<label class="field_heading">Age</label>
+	<input type="number" class="field" name="age" min="1"  placeholder="Enter Patient's Age!">
+<br>
+<br>
+<label id="gender_heading">Gender</label>
+	<input type="radio" name="gender" value="Male" id="male">
+	<label class="gender_type" for="male">&nbsp;Male</label>
+
+	<input type="radio" name="gender" value="Female" id="female">
+	<label class="gender_type" for="female">&nbsp;Female</label>
+
+	<input type="radio" name="gender" value="Other" id="other">
+	<label class="gender_type" for="other">&nbsp;Other</label>
+<br>
+<br>
+<label class="field_heading">Blood Group</label>
+<select class="select_choice" name="bg">
+	<option value="bg">Blood Group Type</option>
+	<option value="A+">A+</option>
+	<option value="A-">A-</option>
+	<option value="B+">B+</option>
+	<option value="B-">B-</option>
+	<option value="O+">O+</option>
+	<option value="O-">O-</option>
+	<option value="AB+">AB+</option>
+	<option value="AB-">AB-</option>
+</select>
+<br>
+<br>
+<label class="field_heading">E-mail ID</label>
+	<input type="text" class="field" name="email" placeholder="Enter Patient's Email-Id!">
+<br>
+<br>
+<label class="field_heading">Phone Number</label>
+	<input type="number" class="field" name="pnumber" maxlength="10"  placeholder="Enter Patient's Phone-number!">
+<br>
+<br>
+<label class="field_heading">X-Ray Image</label>
+	<input type="file" class="field" name="xray" accept="image/*">
+<br>
+<br>
+<br>
+<br>
+<div class="container" align="center">
+	<input id="reset_button" type="reset" name="reset" onclick="epass_reset();" value="Reset">
+<script type="text/javascript">
+function epass_reset()
+{
+document.eform.uname.value="";
+document.eform.source.value="";
+document.eform.destination.value="";
+document.eform.seat.value="";
+document.eform.category.value="";
+document.eform.vaccine.value="";
+document.eform.uemail.value="";
+document.eform.gender[0].checked=false;
+document.eform.gender[1].checked=false;
+document.eform.gender[2].checked=false;
+document.eform.uname.focus();
+}
+</script>
+	<input id="submit_button" type="submit" name="submit" value="Submit">
+	<button id="cancel_button" onclick="document.location='default.asp'">Cancel</button>
+<br>
+<br>
+<br>
+</div>
+</fieldset>
+</form>
+</div>
+<br>
+<br>
+</body>
+</html>
