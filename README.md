@@ -1,5 +1,7 @@
 # Screenshots of the application
 
+Project Report Link :  https://drive.google.com/file/d/14nVnDcfmrg8ZhaNg89gH2lfeXYS5yaQr/view?usp=drive_link
+
 Home Page:
 
 ![image](https://github.com/Sonu208/Pneumonia-Detector/assets/99793746/dfc33417-6e76-4b8d-8767-928904272486)
